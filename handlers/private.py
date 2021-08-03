@@ -9,9 +9,7 @@ from helpers.filters import other_filters2
 async def start(_, message: Message):
     
     await message.reply_text(
-        f"""**
-HεΥ 🙋‍♀, {} Ι Cαη Plαγ Μυsιc Iη Τhε Vσιcε Chατs Of TεlεGrαm Grσυρs & Chαηηεls Iη Frεε.**
-        """,
+        f"""**HεΥ 🙋‍♀, {} Ι Cαη Plαγ Μυsιc Iη Τhε Vσιcε Chατs Of TεlεGrαm Grσυρs & Chαηηεls Iη Frεε.**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("➕ Add Με Τσ Υσυr Grσυρ 🙋‍♀️", url="https://t.me/SankiRobot?startgroup=true")],
