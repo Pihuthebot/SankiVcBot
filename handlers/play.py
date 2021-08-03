@@ -92,7 +92,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
                    & ~filters.via_bot)
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 Prσcεssιηg...")
+    lel = await message.reply("**🔄 Prσcεssιηg...**")
     
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
