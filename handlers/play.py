@@ -68,13 +68,13 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/font.otf", 32)
-    draw.text((190, 550), f"Title: {title}", (255, 255, 255), font=font)
+    draw.text((190, 550), f"Tittle : {title}", (255, 255, 255), font=font)
     draw.text(
-        (190, 590), f"Duration: {duration}", (255, 255, 255), font=font
+        (190, 590), f"Durat : {duration}", (255, 255, 255), font=font
     )
-    draw.text((190, 630), f"Views: {views}", (255, 255, 255), font=font)
+    draw.text((190, 630), f"👀 Vιεωs : {views}", (255, 255, 255), font=font)
     draw.text((190, 670),
-        f"Added By: {requested_by}",
+        f"🤫 Addεd βy : {requested_by}",
         (255, 255, 255),
         font=font,
     )
@@ -92,7 +92,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
                    & ~filters.via_bot)
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **ᴘʀᴏᴄᴇꜱꜱɪɴɢ...**")
+    lel = await message.reply("`🔄 Prσcεssιηg...`")
     
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
@@ -100,7 +100,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "EsportPlayer"
+        user.first_name = "SankiAssistant"
     usar = user
     wew = usar.id
     try:
@@ -112,24 +112,26 @@ async def play(_, message: Message):
                     invitelink = await _.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>ᴀᴅᴅ ᴍᴇ ᴀꜱ ᴀᴅᴍɪɴ ᴏꜰ ʏᴏʀ ɢʀᴏᴜᴘ ꜰɪʀꜱᴛ! ❰ʜᴇxᴏʀ✘ꜱᴍᴏᴋᴇʀ❱</b>")
+                        "<b>😾 λdd Mε Αs Admιη σf Yσυr Grσυρ Fιrsτ.</b>")
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message.chat.id, "**ᴍᴜꜱɪᴄ ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴊᴏɪɴᴇᴅ ᴛʜɪꜱ ɢʀᴏᴜᴘ ꜰᴏʀ ᴘʟᴀʏ ᴍᴜꜱɪᴄ 🎵**")
+                        message.chat.id, "`🧡 Ηεlρεr Usεrβστ Jσιηεd Yσυr Grσυρ.`")
 
                 except UserAlreadyParticipant:
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b>❰ ꜰʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ❱</b>\nʜᴇʏ ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴜꜱᴇʀʙᴏᴛ ᴄᴏᴜʟᴅɴ'ᴛ ᴊᴏɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴅᴜᴇ ᴛᴏ ʜᴇᴀᴠʏ ᴊᴏɪɴ ʀᴇQᴜᴇꜱᴛꜱ. ᴍᴀᴋᴇ ꜱᴜʀᴇ ᴜꜱᴇʀʙᴏᴛ ɪꜱ ɴᴏᴛ ʙᴀɴɴᴇᴅ ɪɴ ɢʀᴏᴜᴘ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ʟᴀᴛᴇʀ!")
+                        f"<b>`⚠ Flσσd Wαιτ Errσr ⚠ \nUsεr {user.first_name} Cουldη'τ Jσιη Υσur Chaηηεl Dυε τσ Ηεανy Rəqυεsτ  Fσr Usεrβστ ! Mακε Sυrε Usεr Is ηστ βαηηεd ıη Grσυρ`"
+                        "\n\nΟr Mαηυαlly Add @SankiRobot τσ Υσυr Grσυρ Αηd TrY Agαιη.</b>",
+                     )
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i>❰ʜᴇxᴏʀ✘ꜱᴍᴏᴋᴇʀ❱ ᴀꜱꜱɪꜱᴛᴀɴᴛ ᴜꜱᴇʀʙᴏᴛ ɪꜱ ɴᴏᴛ ɪɴ ᴛʜɪꜱ ᴄʜᴀᴛ, ᴀꜱᴋ ᴀᴅᴍɪɴ ᴛᴏ ꜱᴇɴᴅ /ᴘʟᴀʏ ᴄᴏᴍᴍᴀɴᴅ ꜰᴏʀ ꜰɪʀꜱᴛ ᴛɪᴍᴇ ᴛᴏ ᴀᴅᴅ ɪᴛ.</i>")
+            f"<i>🙄 {user.first_name} Usεrβστ ηστ ιη Thιs Chατ, Asκ Chαηηεl Admιη τσ Sεηd /play Cσmmση Fσr Fιrsτ Tιmε Οr Add {user.first_name} Mαηυαlly.</i>")
         return
     
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
@@ -138,22 +140,22 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❰ᴠɪᴅᴇᴏꜱ❱ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇꜱ ᴀʀᴇɴ'ᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ!"
+                f"❌ Vιdεσ ιs Lσηgεr Thαη {DURATION_LIMIT} Μιηυτε's Arεη'τ Αllσωεd Tσ Ρlαy."
             )
 
         file_name = get_file_name(audio)
         title = file_name
-        thumb_name = "https://telegra.ph/file/a67094fc4a99bca08114b.jpg"
+        thumb_name = "https://telegra.ph/file/4a924fb45cb7a4975f754.jpg"
         thumbnail = thumb_name
         duration = round(audio.duration / 60)
-        views = "Locally added"
+        views = "▶ Lσcαlly Addεd"
 
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="❰ᴄʜᴀɴɴᴇʟ❱",
-                        url="https://t.me/EsportCheater")
+                        text="𓄂 𝗦𝗮𝗻𝗸𝗶 𝗪𝗮𝗿𝗿𝗶𝗼𝗿'𝘀 𓆃⁩",
+                        url="https://t.me/BrandSanki")
                    
                 ]
             ]
@@ -190,8 +192,8 @@ async def play(_, message: Message):
                 [
                     [
                         InlineKeyboardButton(
-                            text="❰ᴊᴏɪɴ ɢʀᴏᴜᴘ❱",
-                            url="https://t.me/esportcheater"),
+                            text="𓄂 𝗦𝗮𝗻𝗸𝗶 𝗪𝗮𝗿𝗿𝗶𝗼𝗿'𝘀 𓆃⁩",
+                            url="https://t.me/BrandSanki"),
                         
 
                     ]
@@ -206,25 +208,25 @@ async def play(_, message: Message):
                     [
                         [
                             InlineKeyboardButton(
-                            text="❰ᴊᴏɪɴ ɢʀᴏᴜᴘ❱",
-                            url="https://t.me/esportcheater"),
+                            text="𓄂 𝗦𝗮𝗻𝗸𝗶 𝗪𝗮𝗿𝗿𝗶𝗼𝗿'𝘀 𓆃⁩",
+                            url="https://t.me/BrandSanki"),
 
                         ]
                     ]
                 )
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❰ᴠɪᴅᴇᴏꜱ❱ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇꜱ ᴀʀᴇɴ'ᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ!")
+             await lel.edit(f"❌ Vιdεσ ιs Lσηgεr Thαη {DURATION_LIMIT} Μιηυτε's Arεη'τ Αllσωεd Tσ Ρlαy.")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)     
         file_path = await converter.convert(youtube.download(url))
     else:
         if len(message.command) < 2:
-            return await lel.edit("✌**ᴡʜᴀᴛ'ꜱ ᴛʜᴇ ꜱᴏɴɢ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴘʟᴀʏ?**")
-        await lel.edit("🔎 **ꜰɪɴᴅɪɴɢ ᴛʜᴇ ꜱᴏɴɢ❰ʜᴇxᴏʀ✘ꜱᴍᴏᴋᴇʀ❱...**")
+            return await lel.edit("⚠ Sσηg ηστ Fσυηd. Try Aηστhεr Sσηg Or Mαy βε Sρεll Iτ Ρrσρεrly.**")
+        await lel.edit("🔎 **Fιηdιηg...**")
         query = message.text.split(None, 1)[1]
         # print(query)
-        await lel.edit("🎵 **ᴘʀᴏᴄᴇꜱꜱɪɴɢ ꜱᴏᴜɴᴅꜱ...**")
+        await lel.edit("**🔄 Prσcεssιηg...**")
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -247,7 +249,7 @@ async def play(_, message: Message):
                 
         except Exception as e:
             await lel.edit(
-                "✊ꜱᴏɴɢ ɴᴏᴛ ꜰᴏᴜɴᴅ.\n\nᴛʀʏ ᴀɴᴏᴛʜᴇʀ ꜱᴏɴɢ ᴏʀ ᴍᴀʏʙᴇ ꜱᴘᴇʟʟ ɪᴛ ᴘʀᴏᴘᴇʀʟʏ."
+                "⚠ Sσηg ηστ Fσυηd. Try Aηστhεr Sσηg Or Mαy βε Sρεll Iτ Ρrσρεrly."
             )
             print(str(e))
             return
@@ -257,15 +259,15 @@ async def play(_, message: Message):
                     [
                       
                         InlineKeyboardButton(
-                            text="❰ᴊᴏɪɴ ɢʀᴏᴜᴘ❱",
-                            url="https://t.me/esportcheater"),
+                            text="𓄂 𝗦𝗮𝗻𝗸𝗶 𝗪𝗮𝗿𝗿𝗶𝗼𝗿'𝘀 𓆃⁩",
+                            url="https://t.me/BrandSanki"),
 
                     ]
                 ]
             )
         
         if (dur / 60) > DURATION_LIMIT:
-             await lel.edit(f"❰ᴠɪᴅᴇᴏꜱ❱ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇꜱ ᴀʀᴇɴ'ᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ!")
+             await lel.edit(f"❌ Vιdεσ ιs Lσηgεr Thαη {DURATION_LIMIT} Μιηυτε's Arεη'τ Αllσωεd Tσ Ρlαy.")
              return
         requested_by = message.from_user.first_name
         await generate_cover(requested_by, title, views, duration, thumbnail)  
@@ -275,7 +277,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo="final.png", 
-        caption="**❰ꜱᴍᴏᴋᴇʀ✘ʜᴇxᴏʀ❱ ꜱᴏɴɢ ᴘᴏꜱɪᴛɪᴏɴ:** {}".format(
+        caption="** HεΥ,  Υσυr Sσηg Hαs βεεη Αddεd Tσ #⃣{}.".format(
         position
         ),
         reply_markup=keyboard)
@@ -286,7 +288,7 @@ async def play(_, message: Message):
         await message.reply_photo(
         photo="final.png",
         reply_markup=keyboard,
-        caption="**❰ꜱᴍᴏᴋᴇʀ✘ʜᴇxᴏʀ❱ ɴᴏᴡ ᴘʟᴀʏɪɴɢ ᴀᴛ `{}`...**".format(
+        caption="▶️ **Playιηg** Τhε Sσηg Rεqυəsted Aτ {}.".format(
         message.chat.title
         ), )
         os.remove("final.png")
