@@ -70,11 +70,11 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     font = ImageFont.truetype("etc/font.otf", 32)
     draw.text((190, 550), f"Tittle : {title}", (255, 255, 255), font=font)
     draw.text(
-        (190, 590), f"Durat : {duration}", (255, 255, 255), font=font
+        (190, 590), f"Duration : {duration}", (255, 255, 255), font=font
     )
-    draw.text((190, 630), f"👀 Vιεωs : {views}", (255, 255, 255), font=font)
+    draw.text((190, 630), f"Views : {views}", (255, 255, 255), font=font)
     draw.text((190, 670),
-        f"🤫 Addεd βy : {requested_by}",
+        f"Added By: {requested_by}",
         (255, 255, 255),
         font=font,
     )
@@ -100,7 +100,7 @@ async def play(_, message: Message):
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "SankiAssistant"
+        user.first_name = "SankiPlayer"
     usar = user
     wew = usar.id
     try:
@@ -124,14 +124,14 @@ async def play(_, message: Message):
                     pass
                 except Exception:
                     await lel.edit(
-                        f"<b>`⚠ Flσσd Wαιτ Errσr ⚠ \nUsεr {user.first_name} Cουldη'τ Jσιη Υσur Chaηηεl Dυε τσ Ηεανy Rəqυεsτ  Fσr Usεrβστ ! Mακε Sυrε Usεr Is ηστ βαηηεd ıη Grσυρ`"
-                        "\n\nΟr Mαηυαlly Add @SankiRobot τσ Υσυr Grσυρ Αηd TrY Agαιη.</b>",
+                        f"<b>⚠ Flσσd Wαιτ Errσr ⚠ \nUsεr @SankiAssistant Cουldη'τ Jσιη Υσur Chaηηεl Dυε τσ Ηεανy Rəqυεsτ  Fσr Usεrβστ ! Mακε Sυrε Usεr Is ηστ βαηηεd ıη Grσυρ"
+                        "\n\nΟr Mαηυαlly Add @SankiAssistant τσ Υσυr Grσυρ Αηd TrY Agαιη.</b>",
                      )
     try:
         await USER.get_chat(chid)
     except:
         await lel.edit(
-            f"<i>🙄 {user.first_name} Usεrβστ ηστ ιη Thιs Chατ, Asκ Chαηηεl Admιη τσ Sεηd /play Cσmmση Fσr Fιrsτ Tιmε Οr Add {user.first_name} Mαηυαlly.</i>")
+            f"<i>🙄 Usεrβστ ηστ ιη Thιs Chατ, Asκ Chαηηεl Admιη τσ Sεηd /play Cσmmση Fσr Fιrsτ Tιmε Οr Add @SankiAssistant Mαηυαlly.</i>")
         return
     
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
